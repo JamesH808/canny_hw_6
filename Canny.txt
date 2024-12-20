@@ -1,0 +1,13 @@
+Gaussian smooth:
+	-gaussian kernel: <.1%
+	-Blurx: 12.46%
+	-Blury: 25.74%
+derivx_y: 13.45%
+magx_y: 4.57%
+non_max: 26.40%
+apply_hyst: 17.33%
+
+I got my code to produce images but when I compared them, they differed and I couldn't figure out what was wrong.
+When opening my image it was similar to the correct one but had a few extra outlines. And when I ran the gprof,
+I had all my modules except the kernel module, which I assumed was because it didn't take as much time compared to the other 
+modules because it's not dealing directly with the image. The gprof showed that non_max and Blur_y specificaly take the most amount of time. 
